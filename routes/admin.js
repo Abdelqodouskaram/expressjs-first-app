@@ -9,11 +9,16 @@ const rootDir = require("../util/path");
 const products = [];
 
 router.get("/add-product", (req, res, next) => {
-
-  res.render('add-product', {pageTitle: "Add Product", path: "/admin/add-product"});
+  res.render("add-product", {
+    pageTitle: "Add Product",
+    path: "/admin/add-product",
+    formCss: true,
+    productCss: true,
+    productActive: true
+  });
 
   // sending static files
-  // res.sendFile(path.join(rootDir, "views", "add-product.html"));
+  // res.sendFile(path.join(rootDir, "views/html", "add-product.html"));
 });
 
 router.post("/add-product", (req, res, next) => {
